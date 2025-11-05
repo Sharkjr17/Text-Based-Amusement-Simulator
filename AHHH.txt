@@ -1,0 +1,26 @@
+
+
+#BUILDINGS
+-rides
+-food stalls
+-restrooms
+
+#STATS
+-reputation
+-happieness/boredom
+-cleanlyness
+
+#RIDES
+-manufacturer mult
+-intensity
+-price setting
+-aging
+
+#STAFF
+-staff budget
+
+#GUESTS
+! K scaling (simulate 1 for every 1k)
+-preferences
+-spending willingness
+
