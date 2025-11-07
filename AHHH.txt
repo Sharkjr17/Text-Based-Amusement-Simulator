@@ -24,3 +24,14 @@
 -preferences
 -spending willingness
 
+
+
+
+
+            "name": "",
+            "ID": -1,
+            "plot": -1, 
+            "age": 0, 
+            "manufacture": "", 
+            "type": "wooden roller coaster"
+            

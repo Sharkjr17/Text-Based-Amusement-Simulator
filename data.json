@@ -1,11 +1,80 @@
 {
-    "ride": {
-        "Placeholder": {"gambling": "yes", "J": "K"}
+    "model": {
+        "wooden roller coaster": {
+            "lifeSpan": 40,
+            "excitementCost": 10000,
+            "intensityCost": 10000,
+            "themeCost": 10000,
+            "payroll": 2
+        },
+        "classic mine train": {
+            "lifeSpan": 20,
+            "excitementCost": 20000,
+            "intensty": 20000,
+            "themCost": 10000,
+            "payroll": 3
+        }
     },
+
+
+    "manufacture": {
+        "RCCA": {
+            "qMult": 0.6
+        },
+        "Bow": {
+            "qMult": 0.8
+        },
+        "Ziekenhuis": {
+            "qMult": 1.0
+        },
+        "M&S": {
+            "qMult": 1.2
+        },
+        "GPC": {
+            "qMult": 1.4
+        },
+        "Kleinstuber": {
+            "qMult": 1.6
+        }
+    },
+
+
+    "placeholder": {
+        
+    },
+
+
     "staff": {
 
     },
-    "guest": {
-        
+
+
+    "guestTypes": {
+        "children": {
+            "weight": 15,
+            "intensityPreference": 5,
+            "ageTolerance": 0
+        },
+        "teenager": {
+            "weight": 30,
+            "intensityPreference": 40,
+            "ageTolerance": 0
+        },
+        "young adults": {
+            "weight": 20,
+            "intensityPreference": ,
+            "ageTolerance": 0
+        },
+        "parents": {
+            "weight": 30,
+            "intensityPreference": ,
+            "ageTolerance": 0
+        },
+        "old": {
+            "weight": 5,
+            "intensityPreference": ,
+            "ageTolerance": 0
+        },
+        ""
     }
 }

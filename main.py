@@ -24,6 +24,25 @@ ride = data['ride']
 staff = data['staff']
 guest = data['guest']
 
+exit = False
+player = {}
+
+def save_check():
+    global player
+    _ = ("Do you have a save line? Y/N --> ")
+    match _:
+        case "Y" | "y" | "yes":
+            print("AAAA")
+        case "N" | "n" | "no":
+            player['name'] = input("What is your name? --> ")
+            player['pname'] = input("name your themepark --> ")
+            player['money'] = 1000000
+            player['reputation'] = 0.0      # +- 100.0
+            
+def export_save():
+    save = (player["name"])
+    print(save)
+
 # =========================
 # ======= HELPERS =========
 # =========================
@@ -47,7 +66,10 @@ def clear_screen():
 
 
 
+def game():
+    global player, exit
 
+    
 
 
 # =========================
@@ -55,4 +77,7 @@ def clear_screen():
 # =========================
 
 if __name__ == "__main__":
-    start()
+    save_check()
+    while exit != True:
+        game()
+    export_save()
