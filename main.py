@@ -24,8 +24,10 @@ ride = data['ride']
 staff = data['staff']
 guest = data['guest']
 
-exit = False
+exit = False 
+month = 1
 player = {}
+
 
 def save_check():
     global player
@@ -63,13 +65,25 @@ def clear_screen():
 # ===== GAME HANDLER ======
 # =========================
 
+def gDate(m):
+    mList = ("January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+    mReal = m % 12
+    mName = mList[mReal - 1]
+    y = (m // 12) + 1980
+    return {"month": m, "real": mReal, "name": mName, "year": y}
+
+
+def UI(date):
+    print(f"month {date['month']} | {date['name']} {date['year']}")
+
+def gameTurn():
+    global player, exit, month
+
+    date = gDate(month) #dictionary of month, month in the year, name of month, year
 
 
 
-def game():
-    global player, exit
-
-    
+    UI(date)
 
 
 # =========================
@@ -79,5 +93,6 @@ def game():
 if __name__ == "__main__":
     save_check()
     while exit != True:
-        game()
+        gameTurn()
+        month += 1
     export_save()
