@@ -1,18 +1,56 @@
 {
     "model": {
-        "wooden roller coaster": {
+        "side friction coaster": {
+            "yearDeveloped": 1900,
+            "lifeSpan": 15
+        },
+        "classic wooden roller coaster": {
+            "yearDeveloped": 1884,
             "lifeSpan": 40,
             "excitementCost": 10000,
             "intensityCost": 10000,
             "themeCost": 10000,
             "payroll": 2
         },
-        "classic mine train": {
+        "mine train": {
+            "yearDeveloped": 1966,
             "lifeSpan": 20,
             "excitementCost": 20000,
-            "intensty": 20000,
-            "themCost": 10000,
+            "intensityCost": 20000,
+            "themeCost": 10000,
             "payroll": 3
+        },
+        "looping coaster": {
+            "yearDeveloped": 1975,
+            "lifeSpan": 25,
+            "excitementCost": 50000,
+            "intensityCost": 50000,
+            "themeCost": 15000,
+            "payroll": 4
+        },
+        "corkscrew coaster": {
+
+        },
+        "retro suspended coaster": {
+            "yearDeveloped": 1981
+        },
+        "modern suspended coaster": {
+
+        },
+        "catapult launch coaster": {
+            
+        },
+        "hyper coaster": {
+            "yearDeveloped": 1989
+        },
+        "giga coaster": {
+            "yearDeveloped": 2000
+        },
+        "strata coaster": {
+            "yearDeveloped": 2003
+        },
+        "hybrid coaster": {
+            "yearDeveloped": 2011
         }
     },
 
@@ -38,43 +76,45 @@
         }
     },
 
-
-    "placeholder": {
-        
-    },
-
+    
 
     "staff": {
 
     },
 
 
-    "guestTypes": {
+    "guest": {
         "children": {
             "weight": 15,
-            "intensityPreference": 5,
+            "intensityPreference": [0, 5],
             "ageTolerance": 0
         },
         "teenager": {
             "weight": 30,
-            "intensityPreference": 40,
+            "intensityPreference": [30, 90],
             "ageTolerance": 0
         },
         "young adults": {
             "weight": 20,
-            "intensityPreference": ,
+            "intensityPreference": [20, 100],
             "ageTolerance": 0
         },
         "parents": {
             "weight": 30,
-            "intensityPreference": ,
+            "intensityPreference": [0, 40],
             "ageTolerance": 0
         },
         "old": {
             "weight": 5,
-            "intensityPreference": ,
+            "intensityPreference": [0, 5],
             "ageTolerance": 0
-        },
-        ""
+        }
+        
+    },
+
+    "monthData": {
+        "January": {
+            "guestBonus": 1.1
+        }
     }
 }
