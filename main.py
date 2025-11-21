@@ -22,18 +22,21 @@ month = 1
 page = "1"
 main_menu_exit = False
 
-player = {}
-date = {}
+#Stores all active game data
+saveFile = {}
 
+date = {}
 mList = ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
 # =========================
 # ====== LOAD DATA ========
 # =========================
 
+#Reads data json. Data in this json is set by the game developers, read-only.
 with open('data.json', 'r') as file:
     data = json.load(file)
 
+#Uses data json to define several dictionaries containing game data, read-only.
 model = data['model']
 manufacture = data['manufacture']
 staff = data['staff']
@@ -44,34 +47,57 @@ monthData = data['monthData']
 # ======= HELPERS =========
 # =========================
 
+#Completely clears the terminal
 def clear_screen():
     cmd = 'cls' if sys.platform.startswith('win') else 'clear'
     subprocess.run(cmd, shell=True)
 
+#Limits any number to be between a minimum value and maximum value
 def clamp_number(num, min_val, max_val):
     return max(min_val, min(num, max_val))
 
 
 
-
-
+#Check if player already has a save
 def save_check():
-    global player
-    choice = input("Do you have a save line? Y/N --> ").lower()
-    match choice:
-        case "y" | "yes":
-            print("Save loading not yet implemented.")
-        case "n" | "no":
-            player['name'] = input("What is your name? --> ")
-            player['pname'] = input("Name your themepark --> ")
-            player['money'] = 1_000_000
-            player['reputation'] = 0.0      # +- 100.0
-            player['advertising'] = 1.0     # + 100.0, min of 1
+    
+    #Create new save file dictionary
+    global saveFile
 
+    #Prompt player (yes or no)
+    choice = input("Do you have a save line? Y/N --> ").lower()
+
+    #Use player choice to determine next action
+    match choice:
+
+        #Yes, they have a file. Open file.
+        case "y" | "yes":
+            with open('save.json', 'r') as file:
+                saveFile = json.load(file)
+        
+        #No, they don't have a file. Create new file, ask player for their name and park name.
+        #Save files store name, park name, money, reputation, advertising budget, and rides.
+        case "n" | "no":
+            saveFile['name'] = input("What is your name? --> ")
+            saveFile['pname'] = input("Name your themepark --> ")
+            saveFile["currentDate"] = date
+            saveFile['money'] = 1_000_000
+            saveFile['reputation'] = 0.0      # +- 100.0
+            saveFile['advertising'] = 1.0     # + 100.0, min of 1
+            saveFile['rides'] = {}
+
+
+
+#Write saveFile dictionary to save json file
 def export_save():
+
+    
     with open("save.json", "w") as f:
-        json.dump(player, f, indent=2)
+        json.dump(saveFile, f, indent=2)
+        
     print("Game saved.")
+
+
 
 # =========================
 # ===== GAME HANDLER ======
@@ -82,10 +108,10 @@ def get_date(m):
     mName = mList[mReal - 1]
     y = (m // 12) + 1980
     guestBonus = monthData.get(mName, {}).get('guestBonus', 1.0)
-    return {"month": m, "real": mReal, "name": mName, "year": y, "guestBonus": guestBonus}
+    saveFile['currentDate']  = {"month": m, "real": mReal, "name": mName, "year": y}
 
 def simulate():
-    guestsCount = math.floor((player['reputation'] + 100) * player['advertising'] * date['guestBonus'])
+    guestsCount = math.floor((saveFile['reputation'] + 100) * saveFile['advertising'] * data['monthData'][saveFile['currentDate']['name']]['guestBonus'])
     guestList = random.choices(list(guest.keys()), [guest[g]['weight'] for g in guest], k=guestsCount)
 
     #Loop for all guests in simulation this month
@@ -151,14 +177,74 @@ def simulate():
 
 
 
+#Prompts player several times to define a new ride entry, if they can afford it
+def build_coaster():
+
+    model_menu = TerminalMenu(
+        menu_entries = ,
+        title = "Select what model you'd like to build.",
+        menu_cursor_style = ("fg_red", "bold"),
+        menu_highlight_style = ("bg_gray", "bold"),
+        cycle_cursor = True,
+        clear_screen = True
+    )
+
+    newRideModel
+
+    #Get new ride name
+    newRideName = input("What would you like to call your new ride? -->")
 
 
 # =========================
 # ======= UI SYSTEM =======
 # =========================
-def playerTab(m): pass
-def parkTab(m): pass
-def rideTab(m): pass
+def playerTab(m): 
+    print("------------------------------------------------------")
+    
+
+
+
+
+def parkTab(m): 
+
+    tab_menu = TerminalMenu(
+        menu_entries = ["a", "b"],
+        title = f"month {saveFile['currentDate']['month']} | {saveFile['currentDate']['name']} {saveFile['currentDate']['year']} |",
+        menu_cursor = "> ",
+        menu_cursor_style = ("fg_red", "bold"),
+        menu_highlight_style = ("bg_gray", "bold"),
+        cycle_cursor = True,
+        clear_screen = True
+    )
+
+    tab_sel = tab_menu.show()
+
+def rideTab(m): 
+
+
+    tab_menu = TerminalMenu(
+        menu_entries = ['Build Coaster', 'Build Flat Ride'] + saveFile['rides'].keys(),
+        title = f"month {saveFile['currentDate']['month']} | {saveFile['currentDate']['name']} {saveFile['currentDate']['year']} |",
+        menu_cursor = "> ",
+        menu_cursor_style = ("fg_red", "bold"),
+        menu_highlight_style = ("bg_gray", "bold"),
+        cycle_cursor = True,
+        clear_screen = True,
+        quit_keys = ("escape", "backspace"),
+    )
+
+    tab_sel = tab_menu.show()
+
+    if tab_sel == 0:
+        build_coaster()
+    elif tab_sel == 1:
+        build_flat_ride()
+    else:
+        print(saveFile['rides'][tab_sel-2])
+    
+
+
+
 def foodTab(m): pass
 def carnivalTab(m): pass
 def commoditiesTab(m): pass
@@ -167,9 +253,13 @@ def maintanenceTab(m): pass
 def advertisingTab(m): pass
 def realEstateTab(m): pass
 def stockTab(m): pass
-def nerds(m): 
-    print("TROLOLOLOLOLLLOLOOOLOOLOOLL")
-    _ = input("AAAAAAAAAA")
+def settingTab(m): 
+    export_save()
+
+
+
+
+
 
 tabs = {
     "Player Information": playerTab,
@@ -183,24 +273,20 @@ tabs = {
     "Advertising": advertisingTab,
     "Real Estate": realEstateTab,
     "Stock Market": stockTab,
-    "Settings": nerds
+    "Settings": settingTab
 }
 
-
-
-
-
-def UI(date):
+def UI():
     global page, manage
 
     main_menu = TerminalMenu(
-        menu_entries=list(tabs.keys()),
-        title=  f"month {date['month']} | {date['name']} {date['year']} | \n------------------------------------------------------\nSelect a tab, use arrow keys to navigate.",
-        menu_cursor="> ",
-        menu_cursor_style=("fg_red", "bold"),
-        menu_highlight_style=("bg_gray", "bold"),
-        cycle_cursor=True,
-        clear_screen=True,
+        menu_entries = list(tabs.keys()),
+        title = f"month {saveFile['currentDate']['month']} | {saveFile['currentDate']['name']} {saveFile['currentDate']['year']} | \n------------------------------------------------------\nSelect a tab, use arrow keys to navigate.",
+        menu_cursor = "> ",
+        menu_cursor_style = ("fg_red", "bold"),
+        menu_highlight_style = ("bg_gray", "bold"),
+        cycle_cursor = True,
+        clear_screen = True,
     )
 
 
@@ -228,12 +314,18 @@ def UI(date):
 
 def gameTurn():
     global date, month
-    date = get_date(month)
-    UI(date)
+    get_date(month)
+    UI()
 
 if __name__ == "__main__":
+
+    # Check if the player has a save line, if not, create a new profile
     save_check()
+
+    # Keep running until exit is true
     while not exit:
         gameTurn()
+        # progress to next turn/month
         month += 1
+    
     export_save()
