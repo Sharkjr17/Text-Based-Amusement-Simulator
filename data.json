@@ -282,29 +282,29 @@
 
     "guest": {
         "children": {
-        "weight": 15,
-        "intensityPreference": [0, 5],
-        "ageTolerance": 0
+            "weight": 15,
+            "intensityPreference": [0, 5],
+            "ageTolerance": 0
         },
         "teenager": {
-        "weight": 30,
-        "intensityPreference": [30, 90],
-        "ageTolerance": 0
+            "weight": 30,
+            "intensityPreference": [30, 90],
+            "ageTolerance": 0
         },
         "young adults": {
-        "weight": 20,
-        "intensityPreference": [20, 100],
-        "ageTolerance": 0
+            "weight": 20,
+            "intensityPreference": [20, 100],
+            "ageTolerance": 0
         },
         "parents": {
-        "weight": 30,
-        "intensityPreference": [0, 40],
-        "ageTolerance": 0
+            "weight": 30,
+            "intensityPreference": [0, 40],
+            "ageTolerance": 0
         },
         "old": {
-        "weight": 5,
-        "intensityPreference": [0, 5],
-        "ageTolerance": 0
+            "weight": 5,
+            "intensityPreference": [0, 5],
+            "ageTolerance": 0
         }
     },
 

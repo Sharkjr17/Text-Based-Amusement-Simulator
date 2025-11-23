@@ -1,32 +1,15 @@
 {
-  "name": "sdfsdsadsfs",
-  "pname": "fveadsffbswax",
+  "name": "dafsdsads",
+  "pname": "dsvsvdvvd",
   "money": 1000000,
   "reputation": 0.0,
   "advertising": 1.0,
-  "rides": {
-    "dsasvbgfdasdvxbfsewdx": {
-      "model": "side friction coaster",
-      "manufacturer": "GPC",
-      "qMult": 1.4,
-      "yearDeveloped": 1900,
-      "lifeSpan": 15,
-      "payroll": 2,
-      "sizePoints": 0,
-      "intensityPoints": 0,
-      "themePoints": 0,
-      "excitementPoints": 0,
-      "age": 0,
-      "price": 0,
-      "ridersThisMonth": 0,
-      "monthlyCapacity": 0
-    }
-  },
+  "rides": {},
   "currentDate": {
-    "month": 3,
-    "real": 3,
-    "name": "March",
-    "year": 1980,
-    "guestBonus": 1.05
+    "month": 32,
+    "real": 8,
+    "name": "August",
+    "year": 1982,
+    "guestBonus": 1.2
   }
 }

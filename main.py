@@ -106,8 +106,6 @@ def _create_new_save():
     saveFile['reputation'] = 0.0      # range: -100.0 to +100.0
     saveFile['advertising'] = 1.0     # min of 1, max of 100.0
     saveFile['rides'] = {}
-    # Initialize current date properly
-    get_date()
 
 
 # Write saveFile dictionary to save json file
@@ -268,7 +266,8 @@ def build_coaster():
         menu_cursor_style=("fg_red", "bold"),
         menu_highlight_style=("bg_gray", "bold"),
         cycle_cursor=True,
-        clear_screen=True
+        clear_screen=True,
+        quit_keys=("escape", "backspace"),
     )
     model_sel = model_menu.show()
     selected_model = list(model.keys())[model_sel]
@@ -283,7 +282,8 @@ def build_coaster():
         menu_cursor_style=("fg_red", "bold"),
         menu_highlight_style=("bg_gray", "bold"),
         cycle_cursor=True,
-        clear_screen=True
+        clear_screen=True,
+        quit_keys=("escape", "backspace"),
     )
     manuf_sel = manuf_menu.show()
     selected_manuf = list(manufacture.keys())[manuf_sel]
@@ -371,7 +371,8 @@ def parkTab():
         menu_cursor_style=("fg_red", "bold"),
         menu_highlight_style=("bg_gray", "bold"),
         cycle_cursor=True,
-        clear_screen=True
+        clear_screen=True,
+        quit_keys=("escape", "backspace"),
     )
     tab_sel = tab_menu.show()
     if tab_sel == 0:
@@ -406,6 +407,8 @@ def rideTab():
         build_coaster()
     elif tab_sel == 1:
         build_flat_ride()
+    elif tab_sel == None:
+        pass
     else:
         ride_name = ride_names[tab_sel - 2]
         ride_data = saveFile['rides'][ride_name]
@@ -437,6 +440,8 @@ def rideTab():
             pass
         elif sub_sel == 3:  # Demolish Ride
             pass
+        elif sub_sel == None:
+            pass
 
 
 def foodTab(): pass
@@ -450,13 +455,14 @@ def stockTab(): pass
 
 def settingTab():
     settings_menu = TerminalMenu(
-        menu_entries=["Save Game", "Save & Exit", "Back"],
+        menu_entries=["Save Game", "Save & Exit"],
         title="Settings",
         menu_cursor="> ",
         menu_cursor_style=("fg_red", "bold"),
         menu_highlight_style=("bg_gray", "bold"),
         cycle_cursor=True,
-        clear_screen=True
+        clear_screen=True,
+        quit_keys=("escape", "backspace"),
     )
     sel = settings_menu.show()
     if sel == 0:  # Save Game
@@ -503,8 +509,10 @@ def UI():
         main_sel = main_menu.show()
         if main_sel == len(tabs):  # End Month option
             break
-        func = tabs[list(tabs.keys())[main_sel]]
-        if func:
+        elif main_sel == None:
+            pass
+        else:
+            func = tabs[list(tabs.keys())[main_sel]]
             func()
 
 # =========================
