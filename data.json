@@ -1,9 +1,5 @@
 {
     "model": {
-        "side friction coaster": {
-            "yearDeveloped": 1900,
-            "lifeSpan": 15
-        },
         "classic wooden roller coaster": {
             "yearDeveloped": 1884,
             "lifeSpan": 40,
@@ -12,109 +8,318 @@
             "themeCost": 10000,
             "payroll": 2
         },
+        "side friction coaster": {
+            "yearDeveloped": 1900,
+            "lifeSpan": 15,
+            "excitementCost": 8000,
+            "intensityCost": 6000,
+            "themeCost": 7000,
+            "payroll": 2
+        },
+        "wild mouse": {
+            "yearDeveloped": 1930,
+            "lifeSpan": 25,
+            "excitementCost": 6000,
+            "intensityCost": 7000,
+            "themeCost": 5000,
+            "payroll": 2
+        },
+        "kiddie coaster": {
+            "yearDeveloped": 1950,
+            "lifeSpan": 20,
+            "excitementCost": 8000,
+            "intensityCost": 6000,
+            "themeCost": 6000,
+            "payroll": 2
+        },
+        "junior coaster": {
+            "yearDeveloped": 1965,
+            "lifeSpan": 25,
+            "excitementCost": 10000,
+            "intensityCost": 8000,
+            "themeCost": 8000,
+            "payroll": 2
+        },
         "mine train": {
             "yearDeveloped": 1966,
-            "lifeSpan": 20,
+            "lifeSpan": 30,
             "excitementCost": 20000,
             "intensityCost": 20000,
+            "themeCost": 12000,
+            "payroll": 3
+        },
+        "powered coaster": {
+            "yearDeveloped": 1967,
+            "lifeSpan": 25,
+            "excitementCost": 12000,
+            "intensityCost": 10000,
             "themeCost": 10000,
+            "payroll": 2
+        },
+        "terrain coaster": {
+            "yearDeveloped": 1967,
+            "lifeSpan": 35,
+            "excitementCost": 22000,
+            "intensityCost": 20000,
+            "themeCost": 16000,
             "payroll": 3
         },
         "looping coaster": {
             "yearDeveloped": 1975,
-            "lifeSpan": 25,
-            "excitementCost": 50000,
-            "intensityCost": 50000,
-            "themeCost": 15000,
+            "lifeSpan": 30,
+            "excitementCost": 22000,
+            "intensityCost": 24000,
+            "themeCost": 12000,
             "payroll": 4
         },
         "corkscrew coaster": {
-
+            "yearDeveloped": 1976,
+            "lifeSpan": 30,
+            "excitementCost": 20000,
+            "intensityCost": 22000,
+            "themeCost": 12000,
+            "payroll": 4
+        },
+        "alpine coaster": {
+            "yearDeveloped": 1976,
+            "lifeSpan": 25,
+            "excitementCost": 12000,
+            "intensityCost": 10000,
+            "themeCost": 8000,
+            "payroll": 2
         },
         "retro suspended coaster": {
-            "yearDeveloped": 1981
+            "yearDeveloped": 1981,
+            "lifeSpan": 25,
+            "excitementCost": 20000,
+            "intensityCost": 18000,
+            "themeCost": 12000,
+            "payroll": 4
         },
-        "modern suspended coaster": {
-
+        "family coaster": {
+            "yearDeveloped": 1980,
+            "lifeSpan": 30,
+            "excitementCost": 14000,
+            "intensityCost": 12000,
+            "themeCost": 10000,
+            "payroll": 2
         },
-        "catapult launch coaster": {
-            
+        "boomerang shuttle coaster": {
+            "yearDeveloped": 1984,
+            "lifeSpan": 25,
+            "excitementCost": 18000,
+            "intensityCost": 22000,
+            "themeCost": 10000,
+            "payroll": 3
+        },
+        "stand-up coaster": {
+            "yearDeveloped": 1984,
+            "lifeSpan": 25,
+            "excitementCost": 18000,
+            "intensityCost": 24000,
+            "themeCost": 12000,
+            "payroll": 4
+        },
+        "bobsled coaster": {
+            "yearDeveloped": 1984,
+            "lifeSpan": 25,
+            "excitementCost": 12000,
+            "intensityCost": 14000,
+            "themeCost": 8000,
+            "payroll": 3
         },
         "hyper coaster": {
-            "yearDeveloped": 1989
+            "yearDeveloped": 1989,
+            "lifeSpan": 35,
+            "excitementCost": 50000,
+            "intensityCost": 50000,
+            "themeCost": 20000,
+            "payroll": 5
+        },
+        "inverted coaster": {
+            "yearDeveloped": 1992,
+            "lifeSpan": 30,
+            "excitementCost": 28000,
+            "intensityCost": 30000,
+            "themeCost": 15000,
+            "payroll": 4
+        },
+        "modern suspended coaster": {
+            "yearDeveloped": 1994,
+            "lifeSpan": 25,
+            "excitementCost": 22000,
+            "intensityCost": 20000,
+            "themeCost": 14000,
+            "payroll": 4
+        },
+        "lim launch coaster": {
+            "yearDeveloped": 1996,
+            "lifeSpan": 25,
+            "excitementCost": 28000,
+            "intensityCost": 30000,
+            "themeCost": 15000,
+            "payroll": 4
+        },
+        "dive coaster": {
+            "yearDeveloped": 1998,
+            "lifeSpan": 30,
+            "excitementCost": 28000,
+            "intensityCost": 30000,
+            "themeCost": 16000,
+            "payroll": 4
+        },
+        "floorless coaster": {
+            "yearDeveloped": 1999,
+            "lifeSpan": 30,
+            "excitementCost": 26000,
+            "intensityCost": 28000,
+            "themeCost": 15000,
+            "payroll": 4
         },
         "giga coaster": {
-            "yearDeveloped": 2000
+            "yearDeveloped": 2000,
+            "lifeSpan": 35,
+            "excitementCost": 60000,
+            "intensityCost": 60000,
+            "themeCost": 25000,
+            "payroll": 6
+        },
+        "spinning coaster": {
+            "yearDeveloped": 2000,
+            "lifeSpan": 25,
+            "excitementCost": 20000,
+            "intensityCost": 22000,
+            "themeCost": 12000,
+            "payroll": 3
+        },
+        "impulse inverted shuttle": {
+            "yearDeveloped": 2000,
+            "lifeSpan": 25,
+            "excitementCost": 24000,
+            "intensityCost": 26000,
+            "themeCost": 12000,
+            "payroll": 3
+        },
+        "flying coaster": {
+            "yearDeveloped": 2002,
+            "lifeSpan": 30,
+            "excitementCost": 28000,
+            "intensityCost": 30000,
+            "themeCost": 16000,
+            "payroll": 5
         },
         "strata coaster": {
-            "yearDeveloped": 2003
+            "yearDeveloped": 2003,
+            "lifeSpan": 30,
+            "excitementCost": 70000,
+            "intensityCost": 70000,
+            "themeCost": 30000,
+            "payroll": 6
         },
-        "hybrid coaster": {
-            "yearDeveloped": 2011
+        "catapult launch coaster (hydraulic)": {
+            "yearDeveloped": 2003,
+            "lifeSpan": 25,
+            "excitementCost": 34000,
+            "intensityCost": 36000,
+            "themeCost": 16000,
+            "payroll": 4
+        },
+        "motorbike coaster": {
+            "yearDeveloped": 2004,
+            "lifeSpan": 25,
+            "excitementCost": 24000,
+            "intensityCost": 26000,
+            "themeCost": 14000,
+            "payroll": 4
+        },
+        "lsm multi-launch coaster": {
+            "yearDeveloped": 2008,
+            "lifeSpan": 30,
+            "excitementCost": 32000,
+            "intensityCost": 34000,
+            "themeCost": 18000,
+            "payroll": 4
+        },
+        "hybrid coaster (wood-steel)": {
+            "yearDeveloped": 2011,
+            "lifeSpan": 35,
+            "excitementCost": 40000,
+            "intensityCost": 42000,
+            "themeCost": 18000,
+            "payroll": 4
+        },
+        "wing coaster": {
+            "yearDeveloped": 2011,
+            "lifeSpan": 30,
+            "excitementCost": 30000,
+            "intensityCost": 28000,
+            "themeCost": 18000,
+            "payroll": 5
+        },
+        "single-rail coaster (t-rex/raptor)": {
+            "yearDeveloped": 2018,
+            "lifeSpan": 30,
+            "excitementCost": 32000,
+            "intensityCost": 34000,
+            "themeCost": 16000,
+            "payroll": 4
         }
     },
+
 
 
     "manufacture": {
-        "RCCA": {
-            "qMult": 0.6
-        },
-        "Bow": {
-            "qMult": 0.8
-        },
-        "Ziekenhuis": {
-            "qMult": 1.0
-        },
-        "M&S": {
-            "qMult": 1.2
-        },
-        "GPC": {
-            "qMult": 1.4
-        },
-        "Kleinstuber": {
-            "qMult": 1.6
-        }
+        "RCCA": { "qMult": 0.6 },
+        "Bow": { "qMult": 0.8 },
+        "Ziekenhuis": { "qMult": 1.0 },
+        "M&S": { "qMult": 1.2 },
+        "GPC": { "qMult": 1.4 },
+        "Kleinstuber": { "qMult": 1.6 }
     },
-
-    
 
     "staff": {
-
     },
-
 
     "guest": {
         "children": {
-            "weight": 15,
-            "intensityPreference": [0, 5],
-            "ageTolerance": 0
+        "weight": 15,
+        "intensityPreference": [0, 5],
+        "ageTolerance": 0
         },
         "teenager": {
-            "weight": 30,
-            "intensityPreference": [30, 90],
-            "ageTolerance": 0
+        "weight": 30,
+        "intensityPreference": [30, 90],
+        "ageTolerance": 0
         },
         "young adults": {
-            "weight": 20,
-            "intensityPreference": [20, 100],
-            "ageTolerance": 0
+        "weight": 20,
+        "intensityPreference": [20, 100],
+        "ageTolerance": 0
         },
         "parents": {
-            "weight": 30,
-            "intensityPreference": [0, 40],
-            "ageTolerance": 0
+        "weight": 30,
+        "intensityPreference": [0, 40],
+        "ageTolerance": 0
         },
         "old": {
-            "weight": 5,
-            "intensityPreference": [0, 5],
-            "ageTolerance": 0
+        "weight": 5,
+        "intensityPreference": [0, 5],
+        "ageTolerance": 0
         }
-        
     },
 
     "monthData": {
-        "January": {
-            "guestBonus": 1.1
-        }
+        "January": { "guestBonus": 0.9 },
+        "February": { "guestBonus": 0.95 },
+        "March": { "guestBonus": 1.05 },
+        "April": { "guestBonus": 1.10 },
+        "May": { "guestBonus": 1.20 },
+        "June": { "guestBonus": 1.30 },
+        "July": { "guestBonus": 1.30 },
+        "August": { "guestBonus": 1.20 },
+        "September": { "guestBonus": 1.05 },
+        "October": { "guestBonus": 1.10 },
+        "November": { "guestBonus": 0.95 },
+        "December": { "guestBonus": 1.00 }
     }
 }
