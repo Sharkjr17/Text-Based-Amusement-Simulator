@@ -1,15 +1,32 @@
 {
-  "name": "dafsdsads",
-  "pname": "dsvsvdvvd",
+  "name": "dafsdg",
+  "pname": "dafsgv",
   "money": 1000000,
   "reputation": 0.0,
   "advertising": 1.0,
-  "rides": {},
+  "rides": {
+    "Coaster_1": {
+      "model": "Default",
+      "manufacturer": "Default",
+      "qMult": 1.0,
+      "yearDeveloped": 1980,
+      "lifeSpan": 20,
+      "payroll": 1000,
+      "sizePoints": 10,
+      "intensityPoints": 5,
+      "themePoints": 5,
+      "excitementPoints": 5,
+      "age": 0,
+      "price": 0,
+      "ridersThisMonth": 0,
+      "monthlyCapacity": 1000
+    }
+  },
   "currentDate": {
-    "month": 32,
-    "real": 8,
-    "name": "August",
-    "year": 1982,
-    "guestBonus": 1.2
+    "month": 1,
+    "real": 1,
+    "name": "January",
+    "year": 1980,
+    "guestBonus": 0.9
   }
 }

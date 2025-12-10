@@ -1,0 +1,55 @@
+/* =========================
+   ======= MAIN CSS =========
+   ========================= */
+
+/* Left pane: ~75% using fr units, scrollable */
+#left-pane {
+    width: 3fr;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: solid gray;
+    padding: 1;
+}
+
+/* Right pane: ~25%, vertical split */
+#right-pane {
+    width: 1fr;
+    height: 100%;
+    border-left: solid gray;
+}
+
+/* Top-right tab pane: fixed fractional height, scrolls on overflow */
+#tab-pane {
+    height: 3fr;           /* ~60% of right pane */
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: solid gray;
+    padding: 1;
+}
+
+/* Bottom-right info pane */
+#info-pane {
+    height: 2fr;           /* ~40% of right pane */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1;
+}
+
+/* Let the tab button column grow naturally (no fixed height) */
+#tab-buttons {
+    width: 100%;
+    align: left top;
+}
+
+/* Buttons */
+Button {
+    margin: 1 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Content blocks */
+#main-content, #info-content {
+    padding: 1;
+}
